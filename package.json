@@ -1,0 +1,30 @@
+{
+  "name": "webcacheddb",
+  "version": "0.0.1",
+  "description": "web cached db",
+  "main": "webcacheddb.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hansenyang/webcacheddb.git"
+  },
+  "keywords": [
+    "web",
+    "cached",
+    "db",
+    "sql",
+    "indexedDB"
+  ],
+  "author": "hasseyoung@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hansenyang/webcacheddb/issues"
+  },
+  "homepage": "https://github.com/hansenyang/webcacheddb",
+  "devDependencies": {
+    "browserify": "~5.12.1",
+    "q": "~1.0.1"
+  }
+}

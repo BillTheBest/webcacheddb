@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title>Angular</title>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+<style>
+* {
+    padding: 0;
+    margin: 0;
+}
+</style>
+</head>
+<body>
+
+<script charset="utf-8" src="./webcacheddb.js"></script>
+<script>
+var DB_NAME = 'test2';
+var DB_VERSION = 2;
+
+var d = window.cachedDB.open(DB_NAME, DB_VERSION);
+d.then(function() {
+
+    var key = 1;
+
+    d = window.cachedDB.put(key, new Date());
+    d = window.cachedDB.put(2, new Date());
+    d = window.cachedDB.put(3, new Date());
+
+    d.then(function() {
+        console.log(arguments);
+    });
+
+    d = window.cachedDB.get(key);
+
+    d.then(function() {
+        console.log(arguments);
+    });
+
+    d = window.cachedDB.remove(key);
+
+    d.then(function() {
+        console.log(arguments);
+    });
+
+    var imageSrc = 'http://gtms04.alicdn.com/tps/i4/TB12.MVFVXXXXXmXFXXuEpv3pXX-540-430.jpg_q50';
+    window.cachedDB.imgToBase64(imageSrc, function(data) {
+        d = window.cachedDB.put(imageSrc, data);
+
+        d.then(function() {
+            console.log(arguments);
+        });
+    });
+
+}, function() {
+    console.log(arguments);
+});
+</script>
+
+</body>
+</html>
